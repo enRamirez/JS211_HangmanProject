@@ -1,4 +1,5 @@
 # JS211_HangmanProject
+<<<<<<< HEAD
   1. First build this project in the terminal
   2. Then attach it to the DOM
   3. Work through the challenge together
@@ -7,3 +8,6 @@
   6. Test
   7. Present to class
   8. Turn in the URL to your repo, once for each person in your group
+=======
+
+>>>>>>> cca345917a5d6049eb1e84ade63d4e1f415fd464
