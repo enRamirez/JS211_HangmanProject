@@ -8,20 +8,7 @@
     <title>Hangman Game</title>
   </head>
   <body>
-    <!-- the border container is for the yellow outermost border -->
-    <div class="borderContainer">
-      <!-- the main container holds the sub container and score board div -->
-      <div class="mainContainer">
-        <!-- the sub container holds the image section and play container -->
-        <div class="subContainer">
-          <!-- hanging man section -->
-          <section class="hangmanImage">
-            <img id= "hangmanPic" src="./img/start.png" alt="hangman desert  scene">
-          </section>
-          <!-- the play container holds the heading, alphabet div and clear board button -->
-          <section class="playContainer">
-            <p class="headTitle">Take Your Guess</p>
-            <!-- the alphabet div holds the buttons of the alphabet-->
+        <section>
             <div class="alphabet">
               <!-- inside btnClick(): hangman(), updateScoreboard() -->
               <button type="button" class="letters" onclick="btnClick('A')">A</button>
@@ -52,16 +39,8 @@
               <button type="button" class="letters" onclick="btnClick('Z')">Z</button>
             </div>
             <button type="button" id="clearBoardBtn" onclick="clearBoard(true)">New Game</button>  
-          </section>
-        </div>
-        <!-- div word tracker -->
-        <div class="scoreBoard">
-          <p id="guessedLetters">
-            <!-- scorboard -->
-          </p>
-        </div>
-      </div>
-    </div>
+        </section>
+       
   
     <script src="./main.js"></script>
   </body>
