@@ -11,3 +11,19 @@
 =======
 
 >>>>>>> cca345917a5d6049eb1e84ade63d4e1f415fd464
+
+Ruben:
+    Make sure to make a new branch before making or updating code
+    Make sure to add comments of a code plan
+
+    Will be working on the HTML and CSS portion of hangman.
+
+
+
+Enrique:
+    Make sure to make a new branch before making or updating code
+    Make sure to add comments of a code plan
+
+    Will be working on the .js portion of handman.
+
+    
