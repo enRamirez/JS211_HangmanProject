@@ -1,16 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hangman</title>
-</head>
-<body>
-  
-  <script src="./main.js"></script>
-</body>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Hangman Game</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Cute+Font&family=Didact+Gothic&family=Moirai+One&family=Quicksand:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="container">
+      <div class="main">
+        <h1>hangman</h1>
+      </div>
+      <div class="gameArea">
+        <ul class="wordDisplay">
+          <li class="letter">w</li>
+          <li class="letter">a</li>
+          <li class="letter guessed">t</li>
+          <li class="letter">e</li>
+          <li class="letter">r</li>
+          <li class="letter">m</li>
+          <li class="letter">e</li>
+          <li class="letter">l</li>
+          <li class="letter">o</li>
+          <li class="letter">n</li>
+        </ul>
+        <h4 class="incorrectGuess">incorrect guesses: <b>0/5</b></h4>
+      </div>
+      <div class="keyboard">
+        <button type="button" class="letters" onclick="btnClick('A')">A</button>
+        <button type="button" class="letters" onclick="btnClick('B')">B</button>
+        <button type="button" class="letters" onclick="btnClick('C')">C</button>
+        <button type="button" class="letters" onclick="btnClick('D')">D</button>
+        <button type="button" class="letters" onclick="btnClick('E')">E</button>
+        <button type="button" class="letters" onclick="btnClick('F')">F</button>
+        <button type="button" class="letters" onclick="btnClick('G')">G</button>
+        <button type="button" class="letters" onclick="btnClick('H')">H</button>
+        <button type="button" class="letters" onclick="btnClick('I')">I</button>
+        <button type="button" class="letters" onclick="btnClick('J')">J</button>
+        <button type="button" class="letters" onclick="btnClick('K')">K</button>
+        <button type="button" class="letters" onclick="btnClick('L')">L</button>
+        <button type="button" class="letters" onclick="btnClick('M')">M</button>
+        <button type="button" class="letters" onclick="btnClick('N')">N</button>
+        <button type="button" class="letters" onclick="btnClick('O')">O</button>
+        <button type="button" class="letters" onclick="btnClick('P')">P</button>
+        <button type="button" class="letters" onclick="btnClick('Q')">Q</button>
+        <button type="button" class="letters" onclick="btnClick('R')">R</button>
+        <button type="button" class="letters" onclick="btnClick('S')">S</button>
+        <button type="button" class="letters" onclick="btnClick('T')">T</button>
+        <button type="button" class="letters" onclick="btnClick('U')">U</button>
+        <button type="button" class="letters" onclick="btnClick('V')">V</button>
+        <button type="button" class="letters" onclick="btnClick('W')">W</button>
+        <button type="button" class="letters" onclick="btnClick('X')">X</button>
+        <button type="button" class="letters" onclick="btnClick('Y')">Y</button>
+        <button type="button" class="letters" onclick="btnClick('Z')">Z</button>
+      </div>
+    </section>
+
+    <script src="./main.js"></script>
+  </body>
 </html>
 
+<!-- 
 
 
 
+
+<section class="gameArea">
+      <section>
+        <h1>hangman</h1>
+      </section>
+
+      <section>
+        <ul class="wordDisplay">
+          <li class="letter"></li>
+          <li class="letter"></li>
+          <li class="letter guessed">a</li>
+          <li class="letter"></li>
+          <li class="letter"></li>
+          <li class="letter"></li>
+          <li class="letter"></li>
+        </ul>
+      </section>
+
+      <section class="keyboard">
+        <div class="alphabet">
+          inside btnClick(): hangman(), updateScoreboard()
+          <button type="button" class="letters" onclick="btnClick('A')">
+            A
+          </button>
+          <button type="button" class="letters" onclick="btnClick('B')">
+            B
+          </button>
+          <button type="button" class="letters" onclick="btnClick('C')">
+            C
+          </button>
+          <button type="button" class="letters" onclick="btnClick('D')">
+            D
+          </button>
+          <button type="button" class="letters" onclick="btnClick('E')">
+            E
+          </button>
+          <button type="button" class="letters" onclick="btnClick('F')">
+            F
+          </button>
+          <button type="button" class="letters" onclick="btnClick('G')">
+            G
+          </button>
+          <button type="button" class="letters" onclick="btnClick('H')">
+            H
+          </button>
+          <button type="button" class="letters" onclick="btnClick('I')">
+            I
+          </button>
+          <button type="button" class="letters" onclick="btnClick('J')">
+            J
+          </button>
+          <button type="button" class="letters" onclick="btnClick('K')">
+            K
+          </button>
+          <button type="button" class="letters" onclick="btnClick('L')">
+            L
+          </button>
+          <button type="button" class="letters" onclick="btnClick('M')">
+            M
+          </button>
+          <button type="button" class="letters" onclick="btnClick('N')">
+            N
+          </button>
+          <button type="button" class="letters" onclick="btnClick('O')">
+            O
+          </button>
+          <button type="button" class="letters" onclick="btnClick('P')">
+            P
+          </button>
+          <button type="button" class="letters" onclick="btnClick('Q')">
+            Q
+          </button>
+          <button type="button" class="letters" onclick="btnClick('R')">
+            R
+          </button>
+          <button type="button" class="letters" onclick="btnClick('S')">
+            S
+          </button>
+          <button type="button" class="letters" onclick="btnClick('T')">
+            T
+          </button>
+          <button type="button" class="letters" onclick="btnClick('U')">
+            U
+          </button>
+          <button type="button" class="letters" onclick="btnClick('V')">
+            V
+          </button>
+          <button type="button" class="letters" onclick="btnClick('W')">
+            W
+          </button>
+          <button type="button" class="letters" onclick="btnClick('X')">
+            X
+          </button>
+          <button type="button" class="letters" onclick="btnClick('Y')">
+            Y
+          </button>
+          <button type="button" class="letters" onclick="btnClick('Z')">
+            Z
+          </button>
+        </div>
+        <button type="button" id="clearBoardBtn" onclick="clearBoard(true)">
+          New Game
+        </button>
+      </section>
+    </section>
+
+
+
+ -->
