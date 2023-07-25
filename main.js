@@ -1,66 +1,65 @@
-'use strict'
-
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-const getPrompt = () => {
-    rl.question('enter a string: ', (inputString) => {
-        // MediaStreamAudioSourceNode(guess);
-        printBoard();
-        getpromp();
-    });
-}
-
+"use strict";
 console.clear();
+const keyboard = document.getElementById("keyboard");
 
-// need an array of words
-
-let words = [
-    "JOCKEY",
-    "PROVISION",
-    "TRADITION",
-    "RAID",
-    "HILL",
-    "MEAN",
-    "SALON",
-    "STAFF",
-    "ILLUSION",
-    "SERVICE",
-    "SWIM",
-    "PANIC",
-    "LANGUAGE",
-    "RATE",
-    "MARINE",
-    "NEGATIVE",
-    "STATEMENT",
-    "STRIDE",
-    "PRINCE",
-    "ABOLISH",
-    "FAX",
-    "TICKET",
-    "DEPARTURE",
-    "JUST",
-    "INSIGHT",
-    "INCIDENT",
-    "FREIGHT",
-    "REQUEST",
-    "BURST",
-    "QUESTION",
+// need an array of words, that way we can pull a random word
+let alphabet = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
 ];
 
-// need a class called scoreboard
-class scoreboard {
-    constructor(numGuesses, guessesRemaining, score, word, wordArr, guess, guessedLetters, isCorrect) {
-      this.numGuesses = numGuesses;
-      this.guessesRemaining = guessesRemaining;
-      this.score = score;
-      this.word = word;
-      this.wordArr = wordArr;
-      this.guess = guess;
-      this.guessedLetters = guessedLetters;
-      this.isCorrect = isCorrect;
-    }
-  }
+function randomWord() {
+  answer =
+    programming_languages[
+      Math.floor(Math.random(words) * programming_languages.length)
+    ];
+}
+
+const btnClick = (event, letter) => {
+  console.log(event.target);
+  console.log("You just clicked on", letter);
+};
+
+alphabet.forEach((letter) => {
+  const button = document.createElement("button");
+  button.classList.add("letters");
+  button.setAttribute("type", "button");
+  button.addEventListener("click", (event) => {
+    btnClick(event, letter);
+  });
+  button.innerText = letter.toUpperCase();
+  keyboard.appendChild(button);
+});
+
+
+// need vars for; answer, max amount of wrong letter, how many mistakes, how many guess
+
+// ruben will help with these two
+let answer = "";
+
+
+let maxWrong = 6;
