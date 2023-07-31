@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman</title>
     <link rel="stylesheet" href="./style.css" />
-    <title>Hangman Game</title>
+    <script src="./words.js" defer></script>
+    <script src="./main.js" type="module" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,48 +15,43 @@
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Cute+Font&family=Didact+Gothic&family=Moirai+One&family=Quicksand:wght@700&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon_io/favicon-16x16.png"
+    />
+    <!-- <link rel="manifest" href="/site.webmanifest" /> -->
   </head>
   <body>
     <section class="container">
       <div class="main">
-        <h1>HANGMAN</h1>
+        <h1>hangman</h1>
       </div>
       <div class="gameArea">
-        <ul class="wordDisplay">
-          <!-- We will need to generate the word placeholder in .js  -->
-        </ul>
-        <h4 class="incorrectGuess">Incorrect Guesses: <b><!--We will need to generate the number of guesses x/6 --></b></h4>
+        <ul class="wordDisplay"></ul>
+        <h4 class="hintText">
+          Hint: <b>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</b>
+        </h4>
+        <h4 class="incorrectGuess">
+          Incorrect Guesses:
+          <b><!--We will need to generate the number of guesses x/6 --></b>
+        </h4>
       </div>
-      <div class="keyboard">
-        <!-- <button type="button" class="letters" onclick="btnClick('A')">A</button>
-        <button type="button" class="letters" onclick="btnClick('B')">B</button>
-        <button type="button" class="letters" onclick="btnClick('C')">C</button>
-        <button type="button" class="letters" onclick="btnClick('D')">D</button>
-        <button type="button" class="letters" onclick="btnClick('E')">E</button>
-        <button type="button" class="letters" onclick="btnClick('F')">F</button>
-        <button type="button" class="letters" onclick="btnClick('G')">G</button>
-        <button type="button" class="letters" onclick="btnClick('H')">H</button>
-        <button type="button" class="letters" onclick="btnClick('I')">I</button>
-        <button type="button" class="letters" onclick="btnClick('J')">J</button>
-        <button type="button" class="letters" onclick="btnClick('K')">K</button>
-        <button type="button" class="letters" onclick="btnClick('L')">L</button>
-        <button type="button" class="letters" onclick="btnClick('M')">M</button>
-        <button type="button" class="letters" onclick="btnClick('N')">N</button>
-        <button type="button" class="letters" onclick="btnClick('O')">O</button>
-        <button type="button" class="letters" onclick="btnClick('P')">P</button>
-        <button type="button" class="letters" onclick="btnClick('Q')">Q</button>
-        <button type="button" class="letters" onclick="btnClick('R')">R</button>
-        <button type="button" class="letters" onclick="btnClick('S')">S</button>
-        <button type="button" class="letters" onclick="btnClick('T')">T</button>
-        <button type="button" class="letters" onclick="btnClick('U')">U</button>
-        <button type="button" class="letters" onclick="btnClick('V')">V</button>
-        <button type="button" class="letters" onclick="btnClick('W')">W</button>
-        <button type="button" class="letters" onclick="btnClick('X')">X</button>
-        <button type="button" class="letters" onclick="btnClick('Y')">Y</button>
-        <button type="button" class="letters" onclick="btnClick('Z')">Z</button> -->
-      </div>
+      <div class="keyboard" id="keyboard"></div>
+      <button>Play Again</button>
     </section>
-
-    <script src="./main.js"></script>
   </body>
 </html>
