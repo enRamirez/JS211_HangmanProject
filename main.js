@@ -1,89 +1,62 @@
-'use strict'
-console.clear();
+"use strict";
 
-// need an array of words, that way we can pull a random word
+const wordDisplay = document.querySelector(".wordDisplay");
+const guessesText = document.querySelector(".incorrectGuess b");
+const keyboardDiv = document.querySelector(".keyboard");
 
-let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-        't', 'u', 'v', 'w', 'x', 'y', 'z'];
+let currentWord;
+let correctLetters = [];
+let wrongGuessCount = 0;
+const maxGuesses = 6;
 
-let words = [
-    "JOCKEY",
-    "PROVISION",
-    "TRADITION",
-    "RAID",
-    "HILL",
-    "MEAN",
-    "SALON",
-    "STAFF",
-    "ILLUSION",
-    "SERVICE",
-    "SWIM",
-    "PANIC",
-    "LANGUAGE",
-    "RATE",
-    "MARINE",
-    "NEGATIVE",
-    "STATEMENT",
-    "STRIDE",
-    "PRINCE",
-    "ABOLISH",
-    "FAX",
-    "TICKET",
-    "DEPARTURE",
-    "JUST",
-    "INSIGHT",
-    "INCIDENT",
-    "FREIGHT",
-    "REQUEST",
-    "BURST",
-    "QUESTION",
-];
+//selecting a random word and hint from the words.js
+const randomWord = () => {
+  const { word, hint } = words[Math.floor(Math.random() * words.length)];
+  currentWord = word;
+  console.log(word);
+  document.querySelector(".hintText b").innerText = hint;
+  wordDisplay.innerHTML = word
+    .split("")
+    .map(() => `<li class="letter"></li>`)
+    .join("");
+};
 
-function randomWord() {
-    answer = programming_languages[Math.floor(Math.random(words) * programming_languages.length)];
+const gameOver = (isVictory) => {};
 
+const initGame = (button, clickedLetter) => {
+  //checking if clickedLetter exists on the currentWord
+  if (currentWord.includes(clickedLetter)) {
+    [...currentWord].forEach((letter, index) => {
+      if (letter === clickedLetter) {
+        correctLetters.push(letter);
+        wordDisplay.querySelectorAll("li")[index].innerText = letter;
+        wordDisplay.querySelectorAll("li")[index].classList.add("guessed");
+      }
+    });
+  } else {
+    //if clicked letter doesn't exists then update the wrongGuessCount
+    wrongGuessCount++;
+  }
+  button.disabled = true;
+  guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
+
+  if (wrongGuessCount === maxGuesses) return gameOver(false);
+  if (correctLetters.length === currentWord.length) return gameOver(true);
+};
+
+//Creating keyboard buttons and attaching event listeners
+// For each lowercase letter (a to z)
+for (let i = 97; i <= 122; i++) {
+  // Create a new button element with the letter as its text
+  const button = document.createElement("button");
+  button.innerText = String.fromCharCode(i);
+  //Append the button to the keyboardDiv element
+  keyboardDiv.appendChild(button);
+  // Add an event listener to the button to handle the click event
+  button.addEventListener("click", (e) =>
+  //Call initGame function with the clicked button and the associated letter as parameters
+    initGame(e.target, String.fromCharCode(i))
+  );
 }
-
-let buttons = function () {
-        myButtons = document.getElementById('buttons');
-        letters = document.createElement('ul');
-    
-        for (var i = 0; i < alphabet.length; i++) {
-          letters.id = 'alphabet';
-          list = document.createElement('li');
-          list.id = 'letter';
-          list.innerHTML = alphabet[i];
-          check();
-          myButtons.appendChild(letters);
-          letters.appendChild(list);
-        }
-
-        console.log()
-      } 
-
-
-
-// need vars for; answer, max amount of wrong letter, how many mistakes, how many guess
-
-// ruben will help with these two
-let answer = ""; 
-let maxWrong = 6;
-
-// enrique will help with these two
-// 
-let guessed = [];
-
-
-
-
-let incorrectGuess = 0;
-
-
-
-
-
-
-document.getElementById('maxWrong').innerHTML = maxWrong;
 
 randomWord();
